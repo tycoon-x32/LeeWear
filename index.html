@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeeWear – Vintage Elite</title>
+  <link rel="icon" href="https://img.icons8.com/?size=100&id=0PeI7FtJWHv1&format=png&color=000000" type="image/png"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background-color: #111;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #fff, #aaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: url('https://images.pexels.com/photos/432059/pexels-photo-432059.jpeg') center/cover no-repeat;
+      background-blend-mode: multiply;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #e6e6e6, #b3b3b3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+
+    .shop-btn {
+      padding: 0.8rem 1.6rem;
+      background: linear-gradient(to right, #fff, #aaa);
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .shop-btn:hover {
+      background: linear-gradient(to right, #aaa, #fff);
+    }
+
+    .products {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .products h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(to right, #eee, #999);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.3s ease, border-color 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: #888;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      background: linear-gradient(to right, #eee, #bbb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      margin: 0.5rem 0 1rem;
+      color: #ccc;
+    }
+
+    .product-card a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(to right, #fff, #aaa);
+      color: black;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .product-card a:hover {
+      background: linear-gradient(to right, #aaa, #fff);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    #music-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-audio" autoplay loop muted>
+    <source src="https://archive.org/download/TheGodfatherTheme/The%20Godfather%20Theme.mp3" type="audio/mpeg">
+  </audio>
+  <button id="music-toggle">🔇</button>
+
+  <script>
+    const toggleBtn = document.getElementById('music-toggle');
+    const audio = document.getElementById('bg-audio');
+
+    toggleBtn.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      toggleBtn.textContent = audio.muted ? '🔇' : '🔊';
+    });
+
+    window.addEventListener('click', () => {
+      if (audio.paused) audio.play();
+    }, { once: true });
+  </script>
+
+  <header>
+    <nav>
+      <div class="logo">LeeWear</div>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="https://tycoon-x32.github.io/lee-and-co/" target="_blank">Lee & Co</a></li>
+        <li><a href="tel:+254708623801">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero" id="top">
+      <h1>LeeWear</h1>
+      <p>Aviation Meets Elegance – Old Money Looks for Modern Legends</p>
+      <a href="#products" class="shop-btn">Explore Collection</a>
+    </div>
+  </header>
+
+  <section class="products" id="products">
+    <h2>Featured Pieces</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.pexels.com/photos/22481866/pexels-photo-22481866.jpeg" alt="Old Money Suit" />
+        <h3>Old Money Suit</h3>
+        <p>Tailored luxury with timeless precision. Designed for icons.</p>
+        <a href="old-money-suit.html">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="https://img.freepik.com/premium-photo/portrait-pilot-uniform-studio-shot-dark-background_977935-1883.jpg?w=2000" alt="Pilot Jacket" />
+        <h3>Flight Commander Jacket</h3>
+        <p>Engineered for aviation elites — wind-cutting silhouette with presence.</p>
+        <a href="flight-commander-jacket.html">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.pexels.com/photos/24425377/pexels-photo-24425377.jpeg" alt="Aviation Kit" />
+        <h3>Aviation Kit</h3>
+        <p>Sunglasses, gloves, lapel pins — all you need to fly elite.</p>
+        <a href="aviation-kit.html">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>About: LeeWear is a tribute to timeless class and the aviation lifestyle — combining vintage military elements with modern minimalist luxury. Every piece tells a story, tailored for those who lead from the front, fly with style, and move with legacy.</p>
+    <p>&copy; 2025 LeeWear. All rights reserved.</p>
+  </footer>
+</body>
+</html>
