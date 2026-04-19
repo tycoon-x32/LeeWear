@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <title>LEEWEAR - Casual Style, Elevated Comfort</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/palace-script-mt" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/niagara-solid" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="LEEWEAR logo" class="logo-img">
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="shop.html" class="mobile-link">Shop</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <a href="shop.html" class="btn-primary">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-grid">
+            <a href="shop.html?category=Hoodies" class="category-card">
+                <div class="category-overlay"></div>
+                <h3 class="category-name">Hoodies</h3>
+            </a>
+            <a href="shop.html?category=T-Shirts" class="category-card">
+                <div class="category-overlay"></div>
+                <h3 class="category-name">T-Shirts</h3>
+            </a>
+            <a href="shop.html?category=Shirts" class="category-card">
+                <div class="category-overlay"></div>
+                <h3 class="category-name">Shirts</h3>
+            </a>
+            <a href="shop.html?category=Pants" class="category-card">
+                <div class="category-overlay"></div>
+                <h3 class="category-name">Pants</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview">
+        <div class="about-content">
+            <h2 class="section-title">Quality You Can Feel</h2>
+            <p class="about-text">
+                At LEEWEAR, we believe in creating timeless pieces that blend comfort with style.
+                Each item is carefully selected to bring you the best in casual wear.
+            </p>
+            <a href="about.html" class="btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">Shopping Cart</h2>
+            <button class="close-btn" onclick="toggleCart()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="total-price">KSH 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Proceed to Order</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

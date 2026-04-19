@@ -1,0 +1,118 @@
+const products = [
+    // Hoodies
+    {
+        id: 'hoodie-1',
+        name: 'Classic Black Hoodie',
+        price: 3500,
+        image: 'https://images.unsplash.com/photo-1588011025378-15f4778d2558?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMGhvb2RpZSUyMHN0cmVldHdlYXJ8ZW58MXx8fHwxNzc0MDQxMDMwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Hoodies',
+    },
+    {
+        id: 'hoodie-2',
+        name: 'Essential White Hoodie',
+        price: 3500,
+        image: 'https://images.unsplash.com/photo-1772311992807-0a82a1ee93e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMGhvb2RpZSUyMGNhc3VhbHxlbnwxfHx8fDE3NzQwOTM0Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Hoodies',
+    },
+    {
+        id: 'hoodie-3',
+        name: 'Urban Grey Hoodie',
+        price: 3200,
+        image: 'https://images.unsplash.com/photo-1637206613746-64063c3ec68c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmV5JTIwaG9vZGllJTIwZmFzaGlvbnxlbnwxfHx8fDE3NzQwOTM0Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Hoodies',
+    },
+    {
+        id: 'hoodie-4',
+        name: 'Beige Minimalist Hoodie',
+        price: 3800,
+        image: 'https://images.unsplash.com/photo-1708589794486-7767e6062c29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWlnZSUyMGhvb2RpZSUyMG1pbmltYWxpc3R8ZW58MXx8fHwxNzc0MDkzNDM4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Hoodies',
+    },
+    // T-Shirts
+    {
+        id: 'tshirt-1',
+        name: 'Premium Black Tee',
+        price: 1800,
+        image: 'https://images.unsplash.com/photo-1618453292459-53424b66bb6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMHQtc2hpcnQlMjBmYXNoaW9ufGVufDF8fHx8MTc3NDA5MzMwMnww&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'T-Shirts',
+    },
+    {
+        id: 'tshirt-2',
+        name: 'Classic White Tee',
+        price: 1500,
+        image: 'https://images.unsplash.com/photo-1771757025528-f7b6727af2a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHQtc2hpcnQlMjBjYXN1YWx8ZW58MXx8fHwxNzc0MDkzNDM5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'T-Shirts',
+    },
+    {
+        id: 'tshirt-3',
+        name: 'Streetwear Grey Tee',
+        price: 1800,
+        image: 'https://images.unsplash.com/photo-1773848092731-a0b1e5249871?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmV5JTIwdC1zaGlydCUyMHN0cmVldHdlYXJ8ZW58MXx8fHwxNzc0MDkzNDQwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'T-Shirts',
+    },
+    {
+        id: 'tshirt-4',
+        name: 'Navy Essential Tee',
+        price: 1600,
+        image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXZ5JTIwdC1zaGlydCUyMG1pbmltYWxpc3R8ZW58MXx8fHwxNzc0MDkzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'T-Shirts',
+    },
+    // Shirts
+    {
+        id: 'shirt-1',
+        name: 'Casual Button-Up',
+        price: 2500,
+        image: 'https://images.unsplash.com/photo-1760146778379-59db771cadc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXN1YWwlMjBzaGlydCUyMG1lbnN3ZWFyfGVufDF8fHx8MTc3NDA5MzQ0Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Shirts',
+    },
+    {
+        id: 'shirt-2',
+        name: 'Denim Shirt',
+        price: 2800,
+        image: 'https://images.unsplash.com/photo-1759873911817-c31f28b62c24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZW5pbSUyMHNoaXJ0JTIwZmFzaGlvbnxlbnwxfHx8fDE3NzQwOTM0NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Shirts',
+    },
+    {
+        id: 'shirt-3',
+        name: 'Flannel Overshirt',
+        price: 3000,
+        image: 'https://images.unsplash.com/photo-1758505805290-5a5af54dfaab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmbGFubmVsJTIwc2hpcnQlMjBzdHJlZXR3ZWFyfGVufDF8fHx8MTc3NDA5MzQ0Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Shirts',
+    },
+    {
+        id: 'shirt-4',
+        name: 'White Oxford Shirt',
+        price: 2600,
+        image: 'https://images.unsplash.com/photo-1543872981-578a0310c83a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHNoaXJ0JTIwbWluaW1hbGlzdHxlbnwxfHx8fDE3NzQwOTM0NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Shirts',
+    },
+    // Pants
+    {
+        id: 'pants-1',
+        name: 'Black Denim Jeans',
+        price: 4500,
+        image: 'https://images.unsplash.com/photo-1638404390952-3a9442fbad15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMGplYW5zJTIwZGVuaW18ZW58MXx8fHwxNzc0MDIyNDg0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Pants',
+    },
+    {
+        id: 'pants-2',
+        name: 'Classic Blue Jeans',
+        price: 4200,
+        image: 'https://images.unsplash.com/photo-1639602182178-2dc689354103?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlJTIwamVhbnMlMjBjYXN1YWx8ZW58MXx8fHwxNzc0MDkzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Pants',
+    },
+    {
+        id: 'pants-3',
+        name: 'Cargo Pants',
+        price: 4800,
+        image: 'https://images.unsplash.com/photo-1758267928031-a87e5a5c6c5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJnbyUyMHBhbnRzJTIwc3RyZWV0d2VhcnxlbnwxfHx8fDE3NzQwNTA3OTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Pants',
+    },
+    {
+        id: 'pants-4',
+        name: 'Khaki Chinos',
+        price: 4000,
+        image: 'https://images.unsplash.com/photo-1767920787831-644f2b59d960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraGFraSUyMHBhbnRzJTIwZmFzaGlvbnxlbnwxfHx8fDE3NzQwOTM0NDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+        category: 'Pants',
+    },
+];
