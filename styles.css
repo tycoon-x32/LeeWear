@@ -128,7 +128,8 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 600px;
+    min-height: 600px;
+    height: 80vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -145,6 +146,31 @@ body {
     bottom: 2rem;
     left: 2rem;
     padding: 0;
+}
+
+/* Mobile responsiveness for hero */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+
+    .hero-content {
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+        min-height: 300px;
+    }
+
+    .hero-content {
+        bottom: 1rem;
+        left: 1rem;
+    }
 }
 
 .hero-title {
